@@ -18,5 +18,14 @@ ingreso = float(input("Ingrese su ingreso mensual: "))
 
 # Validación
 
+# aprobado = edad >= 18 and ((antiguedad >= 3 and ingreso > 2500) or ingreso >= 4000)
+
+es_mayor_edad = edad >= 18
+caso_1 = es_mayor_edad and antiguedad >= 3 and ingreso > 2500
+caso_2 = es_mayor_edad and ingreso >= 4000
 
 # Salida
+if caso_1 or caso_2:
+    print("Se aprueba el crédito")
+else:
+    print("No se aprueba el crédito")
