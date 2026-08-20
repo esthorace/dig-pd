@@ -10,3 +10,22 @@ y mostrar al usuario True o False:
 No debes usar funciones, ni condicionales (if), bucles (while-for) o cualquier
 otra instrucción que no hayamos visto.
 """
+
+nombre = input("Ingrese su nombre: ")
+edad = int(input("Ingrese su edad: "))
+
+es_valido_nombre = nombre != "****"
+es_valido_nombre_longitud = len(nombre) >= 4 and len(nombre) < 8
+es_valido_edad = edad > 5 and edad < 20
+es_valido_edad_calculada = (edad * 3) > 35
+
+es_valido_todo = all(
+    [
+        es_valido_nombre,
+        es_valido_nombre_longitud,
+        es_valido_edad,
+        es_valido_edad_calculada,
+    ]
+)
+
+print(es_valido_todo)
