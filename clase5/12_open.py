@@ -1,0 +1,10 @@
+archivo = open("12-text.txt", "w")
+archivo.write("Python\n")
+archivo.write("JavaScript\n")
+archivo.write("Django\n")
+archivo.close()
+
+archivo = open("12-text.txt", "r")
+lectura = archivo.read()
+archivo.close()
+print(lectura)
