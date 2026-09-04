@@ -1,0 +1,24 @@
+class Usuario:
+    def __init__(self, nombre: str, contraseña: str) -> None:
+        self.nombre = nombre
+        self.contraseña = contraseña
+
+    def __str__(self) -> str:
+        return f"{self.nombre} | {self.contraseña}"
+
+    @property
+    def contraseña(self):
+        return self.__contraseña
+
+    @contraseña.setter
+    def contraseña(self, nuevo_valor: str):
+        if len(nuevo_valor) < 8:
+            raise ValueError("La contraseña no puede tener menos de 8 caracteres")
+        self.__contraseña = nuevo_valor  # ✨ Crea el atributo en la memoria del objeto
+
+
+usuario = Usuario("Cin", "12345678")
+print(usuario)
+# usuario.contraseña = "12345678"
+# print(usuario)
+print(vars(usuario))
