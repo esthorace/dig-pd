@@ -1,0 +1,43 @@
+"""
+from dataclasses import dataclass
+
+3 modelos:
+
+Ciudad (nombre, poblacion)
+Persona (nombre, edad, ciudad_de_origen)
+TarjetaCredito (titular, numero, vencimiento, codigo)
+"""
+
+from dataclasses import dataclass
+
+
+@dataclass
+class Ciudad:
+    nombre: str
+    poblacion: int
+
+
+@dataclass
+class Persona:
+    nombre: str
+    edad: int
+    ciudad_origen: Ciudad
+
+
+@dataclass
+class TarjetaCredito:
+    titular: Persona
+    numero: str
+    vencimiento: str
+    codigo: str
+
+
+ciudad = Ciudad(nombre="Madrid", poblacion=3200000)
+persona = Persona(nombre="Juan", edad=30, ciudad_origen=ciudad)
+tarjeta = TarjetaCredito(
+    titular=persona, numero="1234-5678-9012-3456", vencimiento="12/25", codigo="123"
+)
+
+print(tarjeta.titular.nombre)
+print(tarjeta.titular.ciudad_origen.nombre)
+print(tarjeta)
